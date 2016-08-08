@@ -1,0 +1,32 @@
+var commonService = function($http, $q){
+commonServiceFactory.sumFloats = function (a, b) {
+            var aDecimalsPlaces = 0; var bDecimalsPlaces = 0;
+            if (a.toString().indexOf('.') > -1)
+                aDecimalsPlaces = a.toString().split('.')[1].length;
+            if (b.toString().indexOf('.') > -1)
+                bDecimalsPlaces = b.toString().split('.')[1].length;
+            var multiplier = (aDecimalsPlaces > bDecimalsPlaces) ? math.pow(10, aDecimalsPlaces) : math.pow(10, bDecimalsPlaces);
+            return Math.round(a * multiplier + b * multiplier) / multiplier;
+        };
+
+        commonServiceFactory.diffFloats = function (a, b) {
+            var aDecimalsPlaces = 0; var bDecimalsPlaces = 0;
+            if (a.toString().indexOf('.') > -1)
+                aDecimalsPlaces = a.toString().split('.')[1].length;
+            if (b.toString().indexOf('.') > -1)
+                bDecimalsPlaces = b.toString().split('.')[1].length;
+            var multiplier = (aDecimalsPlaces > bDecimalsPlaces) ? math.pow(10, aDecimalsPlaces) : math.pow(10, bDecimalsPlaces);
+            return Math.round(a * multiplier - b * multiplier) / multiplier;
+        };
+
+        commonServiceFactory.mulFloats = function (a, b) {
+            var aDecimalsPlaces = 0; var bDecimalsPlaces = 0;
+            if (a.toString().indexOf('.') > -1)
+                aDecimalsPlaces = a.toString().split('.')[1].length;
+            if (b.toString().indexOf('.') > -1)
+                bDecimalsPlaces = b.toString().split('.')[1].length;
+            var multiplier = (aDecimalsPlaces > bDecimalsPlaces) ? math.pow(10, aDecimalsPlaces) : math.pow(10, bDecimalsPlaces);
+            return Math.round(a * b * multiplier) / multiplier;
+        };
+        return commonServiceFactory;
+        };
